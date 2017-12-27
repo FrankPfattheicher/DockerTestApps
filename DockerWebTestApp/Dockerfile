@@ -4,7 +4,6 @@ COPY *.csproj .
 COPY . .
 RUN dotnet restore
 
-#RUN dotnet build -c Release -o /output
 RUN dotnet publish -c Release -o out
 
 FROM microsoft/aspnetcore:2.0.4-nanoserver-1709
