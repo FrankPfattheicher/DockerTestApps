@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  dockerconsoletestapp:
+    image: dockerconsoletestapp
+    build:
+      context: .
+      dockerfile: DockerConsoleTestApp\Dockerfile
+
+  dockerwebtestapp:
+    image: dockerwebtestapp
+    build:
+      context: .
+      dockerfile: DockerWebTestApp\Dockerfile
+
