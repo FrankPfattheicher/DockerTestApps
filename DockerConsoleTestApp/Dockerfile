@@ -6,6 +6,6 @@ COPY /bin/Debug/netcoreapp2.0/publish/ .
 ENTRYPOINT ["dotnet", "DockerConsoleTestApp.dll"]
 
 #docker build -t sanjay .
-#docker run --name sanjayContainer sanjay
-#docker rm sanjayContainer
+#docker run --name sanjay-c sanjay
+#docker rm sanjay-c
 #docker rmi sanjay
