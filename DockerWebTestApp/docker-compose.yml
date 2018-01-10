@@ -1,13 +1,8 @@
 version: '3.4'
 
-networks:
-  default:
-    external:
-      name: nat
-
 services:
   quotesgenerator:
-    image: dsanjay/quotesgenerator:multi
+    image: dsanjay/quotesgenerator:latest
     build:
       context: .
       dockerfile: Dockerfile 

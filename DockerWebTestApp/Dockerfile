@@ -1,5 +1,5 @@
 #BUILD PHASE
-FROM microsoft/aspnetcore-build:2.0.4-2.1.3-nanoserver-1709 AS build-env
+FROM microsoft/aspnetcore-build:2.0.5-2.1.4-nanoserver-sac2016 AS build-env
 WORKDIR /app
 COPY *.csproj .
 RUN dotnet restore
@@ -7,7 +7,7 @@ COPY . .
 RUN dotnet publish -c Release -o out
 
 #RUN PHASE
-FROM microsoft/aspnetcore:2.0.4-nanoserver-1709
+FROM microsoft/aspnetcore:2.0.5-nanoserver-sac2016
 WORKDIR /app
 COPY --from=build-env /app/out .
 
