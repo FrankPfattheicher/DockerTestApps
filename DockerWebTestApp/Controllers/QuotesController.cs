@@ -25,7 +25,7 @@
                 return BadRequest($"number of quotes must be between 0 and {ListOfQuotes.Length}");
 
             var r = new Random();
-            return Ok(ListOfQuotes.OrderBy(_ => r.Next(ListOfQuotes.Length)).Take(count).Select(x => $"{Environment.MachineName}-{x}"));
+            return Ok(ListOfQuotes.OrderBy(_ => r.Next(ListOfQuotes.Length)).Take(count).Select(x => $"{x}-{Environment.MachineName}"));
         }
 
         private class QuoteList

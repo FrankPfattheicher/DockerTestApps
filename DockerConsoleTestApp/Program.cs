@@ -1,26 +1,28 @@
 ﻿namespace DockerConsoleTestApp
 {
     using System;
-    using System.IO;
     using System.Threading;
-    using Newtonsoft.Json;
 
     class Program
     {
         static void Main(string[] args)
         {
-            while (true)
+            var i = 0;
+            while (i < 10)
             {
                 Thread.Sleep(2000);
-                var content = JsonConvert.DeserializeObject<Content>(File.ReadAllText("quotes.json"));
-                var r = new Random().Next(content.Quotes.Length);
-                Console.WriteLine(content.Quotes[r]);
+                Console.WriteLine(GetLetter());
+                i++;
             }
         }
 
-        private class Content
+        private static char GetLetter()
         {
-            public string[] Quotes { get; set; }
+            const string chars = @"$%#@!*abcdefghijklmnopqrstuvwxyz1234567890?;:
+                                    ABCDEFGHIJKLMNOPQRSTUVWXYZ^&";
+            var rand = new Random();
+            var num = rand.Next(0, chars.Length - 1);
+            return chars[num];
         }
     }
 }
